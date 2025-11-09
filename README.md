@@ -27,9 +27,7 @@ It helps users visualize outfits, try them on virtually, and even generate new f
 - Upload your own outfit pictures and store them locally (no account needed).  
 - The app can suggest mix & match ideas using your saved items.
 
-### 🌎 Language Translation
-- Integrated with **LibreTranslate API** — free and open source.  
-- Lets users translate text or style prompts into any supported language.
+<!-- Translation feature removed -->
 
 ---
 
@@ -40,7 +38,7 @@ It helps users visualize outfits, try them on virtually, and even generate new f
 | Framework | React (Vite + JSX) |
 | Styling | CSS / CSS Modules |
 | AI Image Generation | Hugging Face Stable Diffusion API |
-| Translation | [LibreTranslate](https://libretranslate.com/) |
+<!-- Translation stack removed -->
 | Data Storage | LocalStorage / IndexedDB |
 | Image Layering | HTML Canvas / CSS |
 

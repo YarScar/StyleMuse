@@ -1,0 +1,4 @@
+.gen-page{padding:16px;display:flex;flex-direction:column;gap:12px}
+.gen-img{max-width:100%;border-radius:12px;margin-top:12px}
+.error{color:#ff5d7d}
+textarea{width:100%;border-radius:8px;padding:8px}
