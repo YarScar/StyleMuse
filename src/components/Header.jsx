@@ -11,10 +11,10 @@ export default function Header() {
     <header className="sm-header">
       <Link to="/" className="logo">StyleMuse</Link>
       <nav>
-        <NavLink to="/try-on">{t('Try On')}</NavLink>
         <NavLink to="/generate">{t('Generate')}</NavLink>
         <NavLink to="/gallery">{t('Gallery')}</NavLink>
         <NavLink to="/closet">{t('My Closet')}</NavLink>
+        <NavLink to="/translate">{t('Translate')}</NavLink>
       </nav>
       <div className="tools">
         <button onClick={toggleTheme} title="Toggle theme">

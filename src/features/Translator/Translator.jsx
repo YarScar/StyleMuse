@@ -9,6 +9,8 @@ export default function Translator(){
   const [to, setTo] = useState('es')
   const [q, setQ] = useState('Write me a Y2K-inspired fashion prompt')
   const [out, setOut] = useState('')
+  const [loading,setLoading] = useState(false)
+  const [err,setErr] = useState(null)
   const LANGS = [
     { code:'en', name:'English' },
     { code:'es', name:'Español' },
@@ -17,8 +19,14 @@ export default function Translator(){
   ]
 
   async function onTranslate(){
-    const r = await translateText(q, from, to)
-    setOut(r)
+    setLoading(true); setErr(null)
+    try{
+      const r = await translateText(q, from, to)
+      setOut(r)
+    }catch{
+      setErr('Translate failed')
+    }
+    setLoading(false)
   }
 
   useEffect(()=>{ setOut('') },[from, to])
@@ -39,7 +47,8 @@ export default function Translator(){
         </label>
       </div>
       <textarea rows={4} value={q} onChange={e=> setQ(e.target.value)} />
-      <button onClick={onTranslate}>{t('Translate Now')}</button>
+      <button onClick={onTranslate} disabled={loading}>{loading ? '...' : t('Translate Now')}</button>
+      {err && <p style={{color:'#ff5d7d',fontSize:12}}>{err}</p>}
       {out && <pre className="out">{out}</pre>}
     </div>
   )

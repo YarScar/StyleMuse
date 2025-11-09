@@ -5,9 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>StyleMuse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta name="hf-token" content="">
   </head>
   <body>
     <div id="root"></div>
+    <script type="module">
+      // Make the Vite env token available at runtime as a fallback
+      window.VITE_HF_TOKEN = import.meta.env.VITE_HF_TOKEN || ''
+      const m = document.querySelector('meta[name="hf-token"]')
+      if (m) m.content = window.VITE_HF_TOKEN
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
